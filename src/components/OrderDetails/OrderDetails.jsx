@@ -20,26 +20,28 @@ const cardData = [
 
   {
     cardHeading: "Total Orders",
-    totalAmount: "$324",
+    totalAmount: "324",
     date: "on 16 March, 2019",
     btnTxt: "View inventory",
   },
 
   {
     cardHeading: "Orders Shipped",
-    totalAmount: "$200",
+    totalAmount: "200",
     date: "on 15 March, 2019",
   },
 
+  //testing if the array have more then 3 object how will it effect the design
+
   // {
   //   cardHeading: "Orders Shipped",
-  //   totalAmount: "$200",
+  //   totalAmount: "200",
   //   date: "on 15 March, 2019",
   // },
 
   // {
   //   cardHeading: "Orders Shipped",
-  //   totalAmount: "$200",
+  //   totalAmount: "200",
   //   date: "on 15 March, 2019",
   // },
 ];
@@ -58,7 +60,7 @@ const OrderDetails = () => {
                 padding: "16px",
               }}
             >
-              <CardContent>
+              <CardContent sx={{ padding: "0px" }}>
                 <Typography
                   variant="h2"
                   sx={{
@@ -100,6 +102,7 @@ const OrderDetails = () => {
                 </Typography>
               </CardContent>
 
+              {/* checking if the card have a btntxt or not */}
               {data.btnTxt && (
                 <CardActions sx={{ marginTop: "auto" }}>
                   <Link

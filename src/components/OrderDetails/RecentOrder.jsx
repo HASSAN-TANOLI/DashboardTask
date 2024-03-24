@@ -7,8 +7,10 @@ import {
   TableHead,
   TableRow,
   Grid,
+  Box,
 } from "@mui/material";
 import Title from "./Title";
+
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
 }
@@ -64,29 +66,35 @@ const RecentOrder = () => {
   return (
     <>
       <Title>Recent Orders</Title>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Box sx={{ overflowX: "auto" }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Date</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Ship To</TableCell>
+                  <TableCell>Payment Method</TableCell>
+                  <TableCell align="right">Sale Amount</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell>{row.date}</TableCell>
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell>{row.shipTo}</TableCell>
+                    <TableCell>{row.paymentMethod}</TableCell>
+                    <TableCell align="right">{`$${row.amount}`}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Box>
+        </Grid>
+      </Grid>
+      <Link href="#" onClick={preventDefault} sx={{ mt: 3, color: "#6D2AF0" }}>
         See more orders
       </Link>
     </>

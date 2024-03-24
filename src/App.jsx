@@ -11,34 +11,13 @@ import {
 import NavBar from "./components/Navbar/NavBar";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
 import RecentOrder from "./components/OrderDetails/RecentOrder";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link
-        color="inherit"
-        href="https://devhassan.netlify.app/"
-        target="_blank"
-        rel="noopener"
-      >
-        devhassan
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <CssBaseline />
+      {/* showing navbar outside to main box it should be sticky to top */}
       <NavBar />
 
       <Box
@@ -46,11 +25,12 @@ function App() {
         sx={{
           backgroundColor: "#F5F5F5",
           flexGrow: 1,
-          height: "100vh",
-          overflow: "auto",
+          minHeight: "100vh",
         }}
       >
         <Toolbar />
+
+        {/* showing OrderDetails and RecentOrders component */}
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
@@ -62,9 +42,10 @@ function App() {
               </Paper>
             </Grid>
           </Grid>
-          <Copyright sx={{ pt: 4 }} />
         </Container>
       </Box>
+      {/* showing Footer outside to main box it should be sticky to bottom */}
+      <Footer />
     </Box>
   );
 }
