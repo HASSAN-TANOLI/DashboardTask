@@ -26,9 +26,10 @@ function App() {
           backgroundColor: "#F5F5F5",
           flexGrow: 1,
           minHeight: "100vh",
+          marginTop: "60px",
         }}
       >
-        <Toolbar />
+        {/* <Toolbar /> */}
 
         {/* showing OrderDetails and RecentOrders component */}
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
